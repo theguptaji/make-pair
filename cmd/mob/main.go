@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/theguptaji/mob/src/lib/rand"
+	"github.com/theguptaji/mob/pkg/rand"
 	"github.com/urfave/cli/v2"
 )
 
@@ -41,7 +41,7 @@ func makePairs(c *cli.Context) error {
 	maxMembers, err := strconv.Atoi(s)
 	if err != nil {
 		fmt.Println(err)
-		os.Exit(2)
+		return err
 	}
 
 	fmt.Println("Making pairs out of...", members)
